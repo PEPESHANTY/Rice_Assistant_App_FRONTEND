@@ -10,386 +10,349 @@
   Run `npm run dev` to start the development server.
 
 
-  # 🌾 Rice Farming Assistant
+ 
+# Rice Farming Assistant Web Application
 
-A comprehensive farming assistant web application for rice farmers with bilingual support (English ↔ Vietnamese), AI-powered assistance, weather monitoring, and farm management.
+A comprehensive, bilingual (English ↔ Vietnamese) farming assistant designed specifically for rice farmers in Vietnam. Built with a mobile-first approach and accessibility features to serve farmers of all education levels and ages.
 
----
+## 🌾 Overview
 
-## ⚡ Quick Start
+This application provides rice farmers with a complete digital toolkit including farm management, AI-powered assistance based on IRRI (International Rice Research Institute) expertise, weather monitoring, task management, and a digital farming journal. The app prioritizes ease of use for less educated and elderly farmers through simplified interfaces, larger touch targets, and Vietnamese language support with local conventions.
 
-### 1. Add Your OpenAI API Key (Required for AI Features)
+## ✨ Key Features
 
-**File:** `/components/SimpleAssistant.tsx` (Line 33)
+### 🔐 User Authentication
+- **Phone Number Registration**: Simplified registration using mobile phone numbers (Vietnamese format)
+- **Demo Account**: Quick access with demo credentials for testing
+- **Secure Session Management**: Mock authentication system with persistent sessions
 
-```typescript
-// ⚠️ IMPORTANT: Add your OpenAI API key here
-const OPENAI_API_KEY = 'sk-proj-YOUR-KEY-HERE';
-```
+### 🚜 Farm & Plot Management
+- **Multiple Farms**: Create and manage multiple farm locations
+- **Plot Tracking**: Organize farms into individual plots with detailed information
+- **Vietnamese Location Integration**: 
+  - Province and district dropdowns with Vietnamese names
+  - Area measurements in Vietnamese units (sào, công, hecta)
+  - Automatic unit conversion
+- **Crop Information**: Track crop varieties, planting dates, and growth stages
 
-**Get your key:** https://platform.openai.com/api-keys
-
-### 2. Test Locally
-
-```bash
-npm install
-npm run dev
-```
-
-### 3. Publish
-
-Click "Publish" in Figma Make - that's it! ✨
-
----
-
-## ✨ Features
-
-### 🤖 AI Assistant
-- **IRRI Knowledge Base:** 100+ expert farming answers (FREE)
-- **ChatGPT Integration:** Advanced AI for custom questions (your API key)
-- **Bilingual:** All responses in English & Vietnamese
-- **Multi-modal:** Text, voice, and image support
+### 🤖 AI Assistant with IRRI Knowledge Base
+- **25 Expert Questions**: Comprehensive coverage of rice farming topics from IRRI
+- **8 Demo Conversation Flows**: Practical farming scenarios with context-aware responses
+  - Alternate Wetting and Drying (AWD) management
+  - Pest identification and management (Brown planthoppers, stem borers)
+  - Nutrient deficiency diagnosis
+  - Fertilizer recommendations
+  - Harvest timing optimization
+- **Multi-modal Input**: 
+  - Text queries with conversational interface
+  - Photo analysis for pest/disease identification (simulated)
+  - Voice input support (future enhancement)
+- **Progressive Disclosure UX**: Topic cards for easy navigation of expert questions
+- **Fallback System**: Helpful handbook responses when questions aren't in the knowledge base
 
 ### ☀️ Weather Monitoring
-- **Real-time weather** via Open-Meteo API (FREE, no API key needed)
-- **7-day forecast** with temperature, humidity, rainfall
-- **Location-based:** Automatic IP geolocation
-- **Vietnamese time & date** with lunar calendar
+- **Real-time Weather Data**: Powered by Open-Meteo API (no API key required)
+- **IP Geolocation**: Automatic location detection using ipapi.co
+- **7-Day Forecast**: Detailed daily weather predictions
+- **Weather Alerts**: Notifications for adverse conditions
+- **Vietnamese Time Display**: Local date/time formatting
+- **Responsive Weather Icons**: Visual indicators for all weather conditions
 
-### 🌾 Farm Management
-- **Multiple farms & plots** with Vietnamese location data
-- **Plot tracking:** Soil type, rice variety, sowing/harvest dates
-- **Local units:** Area in sào, yield in kg/sào
-- **Vietnamese provinces:** Full dropdown with districts & communes
-
-### 📝 Digital Journal
-- **Daily entries** with rich text and photos
-- **Weather integration:** Auto-record weather conditions
-- **Plot-specific:** Tag entries to specific plots
-- **Search & filter:** Find past entries easily
+### 📔 Digital Journal
+- **Activity Logging**: Record daily farming activities with photos
+- **Rich Media Support**: Attach images to journal entries
+- **Categorized Entries**: Organize by activity type (planting, fertilizing, pest control, etc.)
+- **Timeline View**: Chronological display of farming history
+- **Plot Association**: Link entries to specific plots
 
 ### ✅ Task Management
-- **Smart tasks:** Planting, fertilizer, irrigation, pest control, harvest
-- **Automated calendar:** Based on rice variety and sowing date
-- **Reminders:** Get notified before due dates
-- **Overdue tracking:** Visual badges for late tasks
+- **Automated Crop Calendar**: Pre-populated tasks based on planting dates
+- **Custom Tasks**: Create and manage custom farming tasks
+- **Priority Levels**: High, medium, low priority assignments
+- **Status Tracking**: Mark tasks as pending, in-progress, or completed
+- **Due Date Reminders**: Visual indicators for upcoming and overdue tasks
 
-### 🎨 Accessibility
-- **Font scaling:** Small, Default, Large (for elderly farmers)
-- **Mobile-first:** Optimized for phones with large touch targets
-- **Bilingual UI:** Complete Vietnamese & English translation
-- **Farmer-friendly:** Simple, clear interface
+### 🌍 Bilingual Support
+- **English ↔ Vietnamese**: Full language switching capability
+- **Vietnamese Default**: App loads in Vietnamese by default
+- **Culturally Adapted Content**: Localized units, formats, and terminology
+- **Persistent Language Preference**: User's language choice is remembered
 
----
+### ♿ Accessibility Features
+- **Font Scaling System**: Global text size adjustment (small, medium, large, extra-large)
+- **Simplified Onboarding**: Streamlined registration for less tech-savvy users
+- **Larger Touch Targets**: Mobile-optimized button and input sizes
+- **High Contrast**: Clear visual hierarchy for better readability
+- **Offline-First Design**: Works with mock data when connectivity is limited
 
-## 💰 Cost
+## 🛠️ Technology Stack
 
-### Free Forever
-- ✅ IRRI Knowledge Base (100+ answers)
-- ✅ Weather forecasts (Open-Meteo)
-- ✅ All app features (farms, journal, tasks)
-- ✅ Bilingual support
+- **Frontend Framework**: React 18 with TypeScript
+- **Styling**: Tailwind CSS v4.0
+- **Routing**: React Router v6
+- **State Management**: Context API with React hooks
+- **UI Components**: Shadcn/ui component library
+- **Icons**: Lucide React
+- **Weather API**: Open-Meteo (free, no API key required)
+- **Geolocation**: ipapi.co (free tier)
+- **Date Handling**: date-fns
+- **Build Tool**: Vite
 
-### Your API Key (Optional for Advanced AI)
-- 🤖 ChatGPT AI responses: ~$0.001-0.005 per question
-- 📊 Typical usage: $0-5/month
-- 💡 Recommendation: Set $5-10 spending limit
+## 📱 Mobile-First Design
 
-**Get API key:** https://platform.openai.com/api-keys
-**Set budget:** https://platform.openai.com/account/billing/limits
+The application is optimized for mobile devices with:
+- Responsive layouts that adapt from mobile to desktop
+- Touch-friendly interface elements (minimum 44x44px targets)
+- Simplified navigation with bottom tab bar
+- Reduced cognitive load through progressive disclosure
+- Optimized for slow network connections
+- Works with mock data for offline demonstration
 
----
+## 🚀 Getting Started
 
-## 🔑 Setup Your API Key
+### Prerequisites
+- Node.js 16+ and npm/yarn
+- Modern web browser (Chrome, Firefox, Safari, Edge)
 
-### Method 1: Quick (30 seconds)
-See [`/API_KEY_QUICK_REFERENCE.md`](/API_KEY_QUICK_REFERENCE.md)
+### Installation
 
-### Method 2: Detailed (5 minutes)
-See [`/SETUP_YOUR_API_KEY.md`](/SETUP_YOUR_API_KEY.md)
+1. **Clone or download the project**
 
-### TL;DR:
-1. Get key from OpenAI
-2. Open `/components/SimpleAssistant.tsx`
-3. Replace `'your-openai-api-key-here'` on line 33
-4. Save and test!
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
----
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
 
-## 🏗️ Tech Stack
+4. **Open in browser**
+   Navigate to `http://localhost:5173`
 
-- **Frontend:** React + TypeScript
-- **Styling:** Tailwind CSS v4
-- **Routing:** React Router
-- **State:** Context API + localStorage
-- **UI Components:** Shadcn/ui
-- **Icons:** Lucide React
-- **Weather:** Open-Meteo API (free, no key needed)
-- **AI:** OpenAI GPT-4o-mini (your API key)
-- **Data:** IRRI knowledge base + Vietnamese locations
+### Demo Account
 
----
-
-## 📱 Features Detail
-
-### AI Assistant Intelligence
-```
-User asks question
-    ↓
-Check IRRI Knowledge Base (100+ answers)
-    ↓ YES
-Return expert IRRI answer (FREE, instant)
-    ↓ NO
-Use ChatGPT for custom answer (your API key, bilingual)
-    ↓
-Display in both English & Vietnamese
-```
-
-### Weather System
-- **API:** Open-Meteo (free, reliable)
-- **Geolocation:** IP-based automatic detection
-- **Data:** Temperature, humidity, wind, rainfall
-- **Forecast:** 7-day hourly predictions
-- **Local time:** Vietnamese timezone with lunar calendar
-
-### Farm Management
-- **Vietnamese locations:** All 63 provinces with districts
-- **Plot details:** Soil, variety, irrigation, area
-- **Local units:** sào (Vietnamese land unit)
-- **Multiple farms:** Track different locations
-- **Photos:** Upload field images
-
-### Task Automation
-- **Auto-schedule:** Based on rice variety growth cycle
-- **Types:** Planting, weeding, fertilizer, irrigation, pest control, harvest
-- **Reminders:** Bell icon to set notifications
-- **Status:** Overdue badges, completion tracking
-
----
-
-## 🎯 Use Cases
-
-### For Farmers
-- ✅ Ask farming questions in Vietnamese
-- ✅ Get instant expert answers from IRRI
-- ✅ Check weather before field work
-- ✅ Track multiple plots and crops
-- ✅ Remember when to fertilize/harvest
-- ✅ Keep farming journal
-
-### For Extension Workers
-- ✅ Provide expert guidance quickly
-- ✅ Show IRRI best practices
-- ✅ Track farmer plots
-- ✅ Monitor weather impacts
-- ✅ Share knowledge
-
-### For Researchers
-- ✅ IRRI knowledge base integration
-- ✅ Local Vietnamese units
-- ✅ Real farming data tracking
-- ✅ Weather correlation
-
----
-
-## 🔒 Security & Privacy
-
-### Data Storage
-- ✅ **localStorage only** - all data stays on user's device
-- ✅ **No backend** - no server to hack
-- ✅ **No accounts** - no password databases
-- ✅ **Private** - data never leaves user's browser
-
-### API Key
-- ✅ **Your control** - you manage the key
-- ✅ **Embedded** - in published code (minified)
-- ✅ **Direct calls** - browser → OpenAI only
-- ✅ **Budget limits** - set on OpenAI dashboard
-
----
+Use these credentials to test the application:
+- **Phone**: 0912345678
+- **Password**: demo123
 
 ## 📂 Project Structure
 
 ```
-├── components/
-│   ├── SimpleAssistant.tsx    ⭐ Add your API key here (line 33)
-│   ├── Weather.tsx             ☀️ Weather monitoring
-│   ├── Profile.tsx             👤 User & farm management
-│   ├── Tasks.tsx               ✅ Task tracking
-│   ├── Journal.tsx             📝 Digital journal
-│   ├── AppContext.tsx          🔄 Global state
-│   └── ui/                     🎨 Shadcn components
-├── data/
-│   ├── AIRRVie_QA.ts          📚 IRRI knowledge (100+ Q&A)
-│   ├── irriChatFlows.ts       💬 Conversation templates
-│   ├── vietnamLocations.ts    🗺️ Vietnamese provinces/districts
-│   └── imageAnalysisResponses.ts 📷 Image recognition
-├── config/
-│   └── weather.ts             ⚙️ Weather API config
-└── styles/
-    └── globals.css            🎨 Tailwind + responsive utilities
+├── components/              # React components
+│   ├── AppContext.tsx      # Global state management
+│   ├── Assistant.tsx       # AI assistant interface
+│   ├── AuthPage.tsx        # Login/registration
+│   ├── Dashboard.tsx       # Main dashboard view
+│   ├── Journal.tsx         # Digital farming journal
+│   ├── Profile.tsx         # User profile and settings
+│   ├── Tasks.tsx           # Task management
+│   ├── Weather.tsx         # Weather monitoring
+│   ├── SuggestedQuestions.tsx  # IRRI expert questions UI
+│   └── ui/                 # Shadcn/ui components
+│
+├── data/                   # Mock data and knowledge base
+│   ├── AIRRVie_QA.ts       # 25 IRRI expert questions
+│   ├── irriChatFlows.ts    # 8 demo conversation flows
+│   ├── imageAnalysisResponses.ts  # Simulated image analysis
+│   └── vietnamLocations.ts # Province/district data
+│
+├── config/                 # Configuration files
+│   └── weather.ts          # Weather API settings
+│
+├── guidelines/             # Development guidelines
+│   ├── Guidelines.md
+│   ├── Farm-Location-Quick-Guide.md
+│   ├── Responsive-Scaling-Guide.md
+│   └── Farm-Location-Selector.md
+│
+├── styles/                 # Global styles
+│   └── globals.css         # Tailwind config and custom styles
+│
+├── utils/                  # Utility functions
+│
+└── App.tsx                 # Main application component
 ```
 
----
+## 🎯 Core Features Explained
+
+### IRRI Knowledge Base System
+
+The AI Assistant uses a hybrid approach combining:
+
+1. **Expert Questions (25 topics)**:
+   - AWD (Alternate Wetting and Drying)
+   - Nutrient management (N, P, K, Zn)
+   - Pest and disease identification
+   - Fertilizer recommendations
+   - Harvest timing
+   - Water management
+   - Seedling care
+   - And more...
+
+2. **Demo Conversation Flows (8 scenarios)**:
+   - Contextual, multi-turn conversations
+   - Practical farming scenarios
+   - Trigger when user input matches specific patterns
+   - Provide step-by-step guidance
+
+3. **Fallback Responses**:
+   - When questions aren't covered by expert topics
+   - General guidance with IRRI methodology references
+   - Encourages farmers to consult local agricultural extension
+
+### Weather System Architecture
+
+- **API**: Open-Meteo (free, unlimited requests, no API key)
+- **Location Detection**: Automatic via IP geolocation (ipapi.co)
+- **Data Points**:
+  - Current temperature and conditions
+  - 7-day forecast with high/low temps
+  - Precipitation probability
+  - Wind speed and humidity
+  - Weather code mapping to icons
+- **Error Handling**: Graceful fallbacks for network issues
+- **Caching**: Local storage of recent weather data
+
+### Font Scaling System
+
+Global typography scaling accessible from Profile page:
+- **Small**: 90% base size
+- **Medium**: 100% base size (default)
+- **Large**: 110% base size
+- **Extra Large**: 125% base size
+
+Applied via CSS custom property `--font-scale` affecting all text elements.
+
+### Vietnamese Localization
+
+- **Provinces & Districts**: Complete dataset of Vietnamese administrative divisions
+- **Units**: Sào (360m²), công (1000m²), hecta (10,000m²)
+- **Date Formats**: Vietnamese conventions (DD/MM/YYYY)
+- **Lunar Calendar**: Integration for traditional farming calendar
+- **Language Toggle**: Persistent across sessions
+
+## 🔧 Configuration
+
+### Weather API Configuration
+
+Edit `/config/weather.ts` to customize:
+```typescript
+export const WEATHER_CONFIG = {
+  apiUrl: 'https://api.open-meteo.com/v1/forecast',
+  geocodingUrl: 'https://geocoding-api.open-meteo.com/v1/search',
+  ipLocationUrl: 'https://ipapi.co/json',
+  // ... other settings
+};
+```
+
+### Language Settings
+
+Default language is set to Vietnamese in `/components/AppContext.tsx`:
+```typescript
+const [language, setLanguage] = useState<'en' | 'vi'>('vi');
+```
+
+## 📖 Documentation Files
+
+The project includes comprehensive documentation:
+
+- **QUICK_START_GUIDE.md** - Fast setup instructions
+- **DEMO_WALKTHROUGH.md** - Feature demonstrations
+- **SUGGESTED_QUESTIONS_IMPLEMENTATION.md** - IRRI questions architecture
+- **OPEN_METEO_MIGRATION.md** - Weather system details
+- **IP_GEOLOCATION_IMPLEMENTATION.md** - Location detection
+- **CHATGPT_SUPABASE_REMOVED.md** - API migration notes
+- **DEPLOYMENT_READY.md** - Production deployment guide
+
+## 🎨 Design Philosophy
+
+1. **Farmer-First**: Designed for actual rice farmers, not tech enthusiasts
+2. **Mobile-Optimized**: Most farmers access via smartphones
+3. **Culturally Appropriate**: Vietnamese language, units, and conventions
+4. **Accessible**: Works for elderly farmers and those with limited education
+5. **Practical**: Real farming knowledge from IRRI research
+6. **Offline-Capable**: Functions with mock data when network is unavailable
 
 ## 🧪 Testing
 
-### Test IRRI Knowledge (Free)
-1. Open Assistant
-2. Ask: "What is the AWD method?"
-3. Should get instant IRRI answer ✅
+The application includes:
+- Demo conversation flows for testing AI responses
+- Mock weather data for offline testing
+- Sample journal entries and tasks
+- Pre-populated farm and plot data
 
-### Test ChatGPT AI (Requires Key)
-1. Add your API key (see above)
-2. Ask: "How does climate change affect rice farming in Vietnam?"
-3. Should get bilingual ChatGPT response ✅
+Test the AI assistant by asking:
+- "When should I apply AWD?"
+- "I see brown insects on my rice"
+- "My rice leaves are turning yellow"
+- "How do I know when to harvest?"
 
-### Test Weather
-1. Go to Weather tab
-2. Should auto-detect location ✅
-3. Shows 7-day forecast ✅
+## 🚀 Deployment
 
-### Test Bilingual
-1. Switch language (EN ↔ VI)
-2. All UI translates ✅
-3. Ask question in either language ✅
-4. Response available in both languages ✅
+The application is ready for deployment to:
+- **Vercel** (recommended for React apps)
+- **Netlify**
+- **GitHub Pages**
+- **Any static hosting service**
 
----
+### Build for Production
 
-## 📖 Documentation
+```bash
+npm run build
+```
 
-### Getting Started
-- **Quick Reference:** [`/API_KEY_QUICK_REFERENCE.md`](/API_KEY_QUICK_REFERENCE.md) - 30-second setup
-- **Full Setup:** [`/SETUP_YOUR_API_KEY.md`](/SETUP_YOUR_API_KEY.md) - Complete guide
-- **User Guide:** [`/QUICK_START_GUIDE.md`](/QUICK_START_GUIDE.md) - For farmers
+The optimized production build will be in the `/dist` folder.
 
-### Technical Docs
-- **Implementation:** [`/FINAL_IMPLEMENTATION.md`](/FINAL_IMPLEMENTATION.md) - What was built
-- **Publishing:** [`/READY_TO_PUBLISH.md`](/READY_TO_PUBLISH.md) - Deployment guide
-- **Migration:** [`/CHATGPT_CLIENT_MIGRATION.md`](/CHATGPT_CLIENT_MIGRATION.md) - How it works
+## 🔒 Privacy & Data
 
----
+- **No External Database**: All data stored locally in browser
+- **No User Tracking**: No analytics or tracking scripts
+- **API Calls**: Only to Open-Meteo (weather) and ipapi.co (location)
+- **Mock Authentication**: For demonstration purposes only
+- **Not for Production**: This is a prototype - do not collect real PII
 
-## 🚀 Publishing on Figma Make
+## ⚠️ Important Notes
 
-### Pre-Publish Checklist
-- [ ] Added your OpenAI API key
-- [ ] Tested locally (all features work)
-- [ ] Set spending limit on OpenAI
-- [ ] Ready to share!
+- This is a **demonstration/prototype** application using mock data
+- **Not suitable** for production use without proper backend implementation
+- Weather data requires internet connectivity
+- Location detection may not work in all environments
+- IRRI knowledge base is simplified - real agricultural decisions should involve local experts
 
-### Publishing Steps
-1. Click **"Publish"** in Figma Make
-2. Choose hosting option
-3. Done! ✨
+## 🤝 Contributing
 
-### Post-Publish
-- ✅ App works immediately
-- ✅ No backend setup needed
-- ✅ No environment variables
-- ✅ Just share the URL
-
----
-
-## 💡 Tips & Best Practices
-
-### Cost Optimization
-- IRRI answers most common questions (free!)
-- AI only used for unique questions
-- Set $5-10 monthly limit initially
-- Monitor usage first month
-
-### API Key Security
-- Set spending limits on OpenAI dashboard
-- Monitor usage weekly
-- Rotate key every 3-6 months
-- Don't share published URL publicly if concerned about costs
-
-### User Experience
-- Start users with IRRI questions
-- Show them AI capabilities gradually
-- Bilingual support helps adoption
-- Font scaling helps elderly farmers
-
----
-
-## 🎯 Key Differentiators
-
-### vs Other Farming Apps
-- ✅ **IRRI-backed** expert knowledge
-- ✅ **Bilingual** Vietnamese + English
-- ✅ **Offline-capable** (after first load)
-- ✅ **Local units** (sào, Vietnamese locations)
-- ✅ **AI-enhanced** but works without it
-- ✅ **Mobile-first** for farmers in field
-- ✅ **Free** core features
-
-### vs ChatGPT Alone
-- ✅ **Expert IRRI answers** prioritized
-- ✅ **Rice farming specialized** context
-- ✅ **Vietnamese language** native support
-- ✅ **Farm management** integrated
-- ✅ **Weather** connected
-- ✅ **Tasks & journal** built-in
-
----
-
-## 📊 Stats
-
-- **IRRI Knowledge:** 100+ Q&A pairs
-- **Languages:** English + Vietnamese (full translation)
-- **Weather:** 7-day forecast, hourly data
-- **Locations:** 63 Vietnamese provinces
-- **Task types:** 6 categories
-- **Rice varieties:** Pre-loaded common varieties
-- **Soil types:** 11 Vietnamese soil types
-
----
-
-## 🙏 Acknowledgments
-
-### Data Sources
-- **IRRI** (International Rice Research Institute) - Expert knowledge
-- **Open-Meteo** - Free weather API
-- **OpenAI** - GPT-4o-mini for AI responses
-
-### Technologies
-- **React** + **TypeScript** - UI framework
-- **Tailwind CSS** - Styling
-- **Shadcn/ui** - Component library
-- **Lucide** - Icons
-
----
-
-## 📞 Quick Links
-
-- **OpenAI API Keys:** https://platform.openai.com/api-keys
-- **Set Budget:** https://platform.openai.com/account/billing/limits
-- **Monitor Usage:** https://platform.openai.com/usage
-- **IRRI Website:** https://www.irri.org
-- **Open-Meteo:** https://open-meteo.com
-
----
-
-## 🎉 Ready to Go!
-
-1. ⚡ **Add your API key** ([Quick Guide](/API_KEY_QUICK_REFERENCE.md))
-2. 🧪 **Test locally** (30 seconds)
-3. 🚀 **Publish** (click button)
-4. 🌾 **Share with farmers!**
-
-**Your comprehensive farming assistant is ready to help rice farmers succeed!** ✨
-
----
+This is a demonstration project. For improvements:
+1. Review the guidelines in `/guidelines/`
+2. Maintain mobile-first approach
+3. Preserve Vietnamese localization
+4. Test on mobile devices
+5. Keep accessibility in mind
 
 ## 📄 License
 
-This project uses:
-- IRRI knowledge (educational use)
-- Open-Meteo API (free tier)
-- OpenAI API (your key, your usage)
+This project is for educational and demonstration purposes.
+
+## 🙏 Acknowledgments
+
+- **IRRI (International Rice Research Institute)** - Agricultural knowledge base
+- **Open-Meteo** - Free weather API
+- **Shadcn/ui** - UI component library
+- **Lucide** - Icon library
+- **Vietnamese Farmers** - Inspiration and user requirements
+
+## 📞 Support
+
+For questions about rice farming practices, consult:
+- Local agricultural extension services
+- IRRI knowledge products: www.irri.org
+- Vietnamese Ministry of Agriculture
+
+For technical issues, refer to the documentation files in the project root.
 
 ---
 
-**Built with ❤️ for rice farmers everywhere** 🌾
+**Built with ❤️ for Vietnamese rice farmers**
+
+*Last Updated: October 2025*
